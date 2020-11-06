@@ -1,0 +1,149 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 0.65;
+
+  .chat__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    border-bottom: 1px solid #dadbd3;
+
+    .header__info {
+      flex: 1;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .header__icons {
+      display: flex;
+    }
+  }
+
+  .chat__body {
+    flex: 1;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png");
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+    padding: 30px;
+  }
+
+  .chat__footer {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+    .chat__input {
+      display: flex;
+      flex: 1;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 10px;
+
+      input {
+        border: none;
+        flex: 1;
+      }
+    }
+  }
+}
+
+.message:last-child {
+  scroll-snap-align: end;
+}
+
+.message {
+  position: relative;
+  font-size: 16px;
+  padding: 5px 10px;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 30px;
+
+  .message__timestamp {
+    margin-left: 10px;
+    font-size: xx-small;
+  }
+  .message__name {
+    position: absolute;
+    top: -15px;
+    font-weight: 800;
+    font-size: xx-small;
+  }
+  .isSend {
+    position: absolute;
+    right: 0;
+
+    // display: block;
+    // float: right;
+  }
+}
+
+.message__receiver {
+  margin-left: auto;
+  background-color: #d5f0c0;
+}
+
+.defaultView {
+  display: grid;
+  margin: auto;
+  .defaultView__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #075b51;
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.createGroup__dialog {
+  #form-dialog-title {
+    background-color: #24cc63;
+    width: 50vw;
+    color: #fff;
+  }
+
+  .createGroup__form {
+    border: 1px solid;
+    .error {
+      color: red;
+      margin-bottom: 30px;
+    }
+    input {
+      border: none;
+      border-bottom: 2px solid;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .avatar {
+      border: 1px solid #000;
+      margin: auto;
+      padding: 30px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.chatInfo {
+  .input {
+    border: none;
+    border-bottom: 0.5px solid;
+    width: 80%;
+    background-color: transparent;
+    outline: none;
+  }
+}
